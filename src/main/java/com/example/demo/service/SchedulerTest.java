@@ -10,7 +10,7 @@ public class SchedulerTest {
 
     public static ThreadPool threadPool = new ThreadPool();
 
-    @Scheduled(fixedRate = 1 * 100)
+    @Scheduled(fixedRate = 1000 * 1000)
     public void testThread(){
         soutPoolActiveCount();
         if(threadPool.pool.getActiveCount() < 3){

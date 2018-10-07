@@ -1,5 +1,8 @@
 package com.example.demo.Controller;
 
+import com.example.demo.annotation.aop.TrackTime;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class HelloSpringboot {
+
+    @TrackTime
     @RequestMapping(path = {"/helloSpringBoot"})
-    public String HelloSpring (){
-        System.out.println("hello spring 张旺健 boot");
-        return "hello spring 张旺健 boot";
+    public ResponseEntity HelloSpring (){
+        System.out.println("hello spring boot");
+        return ResponseEntity.status(HttpStatus.OK).body("hello spring boot");
     }
 
     @RequestMapping(value = {"/helloSpringBoot/{repo_name:.+}/repo"})

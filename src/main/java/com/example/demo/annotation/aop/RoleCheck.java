@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ClusterRoleCheck {
+public @interface RoleCheck {
 
     /**
      * 0. 集群管理员， 1.集群普通用户
